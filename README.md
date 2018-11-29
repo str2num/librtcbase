@@ -29,8 +29,8 @@ buildmake使用教程：https://github.com/str2num/buildmake
 
 #### 编译libev-4.11及其以上版本
 如果你的系统是Ubuntu 16.04.4 LTS或者类似版本，你可以跳过该步骤，该项目已经提供Ubuntu 16.04.4 LTS平台下编译好的libev库，位于项目的deps目录下。
-如果你不是以上系统，你首先需要下载安装libev-4.11, github地址：https://github.com/enki/libev
-livev库安装成功之后，请按照要求将libev库的include和lib目录放置到项目的deps目录下。
+如果你不是以上系统，你可能需要下载安装libev-4.11, github地址：https://github.com/enki/libev
+libev库安装成功之后，请按照要求将libev库的include和lib目录放置到项目的deps目录下。
 
 ### 编译
 ```shell
@@ -44,8 +44,8 @@ make
 
 ```
 ### 说明
-+ 该库在Ubuntu 16.04.4 LTS、Ubuntu 14.04、CentOS release 6.5等平台编译通过，并正常使用
-+ gcc-4.8.4, gcc-5.4.0编译通过
++ 该库在Ubuntu 16.04.4 LTS、Ubuntu 14.04、CentOS release 6.5等平台编译通过，并正常使用。
++ gcc-4.8.4, gcc-5.4.0已验证编译通过。
 + 该库移植于Google的WebRtc项目，功能已经过了严格的单元测试, 所以该项目没有提供单元测试用例。
 + 后续会持续跟进WebRtc项目的最新进展，同时该库也会相应的持续维护和更新。
 
