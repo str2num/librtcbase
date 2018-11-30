@@ -4,10 +4,11 @@
 ### 要求
 + 目前仅适用于Linux平台
 + gcc版本建议使用gcc-4.8.4及其更高版本, 该库使用了大量的c++11语法，gcc版本过低将无法编译通过
-+ 依赖libev-4.11及其以上版本
++ 依赖libev-4.22或者以上版本
++ openssl版本不低于1.0.0
 
 ### 主要功能说明
-+ 常用的字符串处理, 比如字符串分隔、字符串和数字类型之间的转换等等
++ 常用的字符串处理, 比如字符串分割、字符串和数字类型之间的转换等等
 + 常用的一些算法实现，比如crc32, md5, sha1, base64等等
 + sigslot机制的实现，支持多线程并且是线程安全的
 + 实用的锁功能实现
@@ -29,8 +30,11 @@ buildmake使用教程：https://github.com/str2num/buildmake
 
 #### 编译libev-4.11及其以上版本
 如果你的系统是Ubuntu 16.04.4 LTS或者类似版本，你可以跳过该步骤，该项目已经提供Ubuntu 16.04.4 LTS平台下编译好的libev库，位于项目的deps目录下。
-如果你不是以上系统，你可能需要下载安装libev-4.11, github地址：https://github.com/enki/libev
+如果你不是以上系统，你可能需要下载安装libev-4.22, github地址：https://github.com/enki/libev
 libev库安装成功之后，请按照要求将libev库的include和lib目录放置到项目的deps目录下。
+
+#### 编译项目
+你可以根据自己的实际需要修改编译选项以及依赖的库文件，比如-g, -O2等等，BUILDMAKE文件的修改方法，请参考buildmake工具使用教程。
 
 ### 编译
 ```shell

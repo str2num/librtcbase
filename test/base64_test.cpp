@@ -18,6 +18,9 @@
 
 #include <rtcbase/base64.h>
 
+void test_base64_decode();
+void test_base64_encode();
+
 void test_base64() {
     std::string str = "hello world!";
     std::string encode_str = rtcbase::Base64::encode(str);
