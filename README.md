@@ -33,7 +33,7 @@ buildmake使用教程：https://github.com/str2num/buildmake
 如果你不是以上系统，你可能需要下载安装libev-4.22, github地址：https://github.com/enki/libev
 libev库安装成功之后，请按照要求将libev库的include和lib目录放置到项目的deps目录下。
 
-#### 编译项目
+#### 编译选项
 你可以根据自己的实际需要修改编译选项以及依赖的库文件，比如-g, -O2等等，BUILDMAKE文件的修改方法，请参考buildmake工具使用教程。
 
 ### 编译
