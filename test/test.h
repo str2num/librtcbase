@@ -20,9 +20,18 @@
 #ifndef  __RTCBASE_TEST_H_
 #define  __RTCBASE_TEST_H_
 
+#include <iostream>
+using namespace std;
+
 void test_create_networks();
 void test_array_size();
 void test_base64();
+void message_digest_test();
+void md5_test();
+void sha1_test();
+void crc32_test();
+void string_encode_test();
+void sigslot_test();
 
 #endif  //__RTCBASE_TEST_H_
 

@@ -45,6 +45,12 @@ size_t hex_encode(char* buffer, size_t buflen,
     return hex_encode_with_delimiter(buffer, buflen, csource, srclen, 0);
 }
 
+size_t hex_decode(char * cbuffer, size_t buflen,
+        const char * source, size_t srclen)
+{
+    return hex_decode_with_delimiter(cbuffer, buflen, source, srclen, 0);
+}
+
 size_t hex_encode_with_delimiter(char* buffer, size_t buflen,
         const char* csource, size_t srclen,
         char delimiter) 

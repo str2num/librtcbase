@@ -50,7 +50,14 @@ clean:
 	rm -rf ./output/bin/test
 	rm -rf test_array_size_test.o
 	rm -rf test_base64_test.o
+	rm -rf test_crc32_test.o
+	rm -rf test_md5_test.o
+	rm -rf test_message_digest_test.o
 	rm -rf test_network_test.o
+	rm -rf test_random.o
+	rm -rf test_sha1_test.o
+	rm -rf test_sigslot_test.o
+	rm -rf test_string_encode_test.o
 	rm -rf test_test.o
 
 .PHONY:dist
@@ -72,14 +79,28 @@ love:
 
 test:test_array_size_test.o \
   test_base64_test.o \
+  test_crc32_test.o \
+  test_md5_test.o \
+  test_message_digest_test.o \
   test_network_test.o \
+  test_random.o \
+  test_sha1_test.o \
+  test_sigslot_test.o \
+  test_string_encode_test.o \
   test_test.o \
   ../deps/libev/lib/libev.a \
   ../output/lib/*.a
 	@echo "[[1;32;40mBUILDMAKE:BUILD[0m][Target:'[1;32;40mtest[0m']"
 	$(CXX) test_array_size_test.o \
   test_base64_test.o \
+  test_crc32_test.o \
+  test_md5_test.o \
+  test_message_digest_test.o \
   test_network_test.o \
+  test_random.o \
+  test_sha1_test.o \
+  test_sigslot_test.o \
+  test_string_encode_test.o \
   test_test.o -Xlinker "-(" ../deps/libev/lib/libev.a \
   ../output/lib/*.a  -lpthread \
   -lcrypto \
@@ -95,9 +116,37 @@ test_base64_test.o:base64_test.cpp
 	@echo "[[1;32;40mBUILDMAKE:BUILD[0m][Target:'[1;32;40mtest_base64_test.o[0m']"
 	$(CXX) -c $(INCPATH) $(DEP_INCPATH) $(CPPFLAGS) $(CXXFLAGS)  -o test_base64_test.o base64_test.cpp
 
+test_crc32_test.o:crc32_test.cpp
+	@echo "[[1;32;40mBUILDMAKE:BUILD[0m][Target:'[1;32;40mtest_crc32_test.o[0m']"
+	$(CXX) -c $(INCPATH) $(DEP_INCPATH) $(CPPFLAGS) $(CXXFLAGS)  -o test_crc32_test.o crc32_test.cpp
+
+test_md5_test.o:md5_test.cpp
+	@echo "[[1;32;40mBUILDMAKE:BUILD[0m][Target:'[1;32;40mtest_md5_test.o[0m']"
+	$(CXX) -c $(INCPATH) $(DEP_INCPATH) $(CPPFLAGS) $(CXXFLAGS)  -o test_md5_test.o md5_test.cpp
+
+test_message_digest_test.o:message_digest_test.cpp
+	@echo "[[1;32;40mBUILDMAKE:BUILD[0m][Target:'[1;32;40mtest_message_digest_test.o[0m']"
+	$(CXX) -c $(INCPATH) $(DEP_INCPATH) $(CPPFLAGS) $(CXXFLAGS)  -o test_message_digest_test.o message_digest_test.cpp
+
 test_network_test.o:network_test.cpp
 	@echo "[[1;32;40mBUILDMAKE:BUILD[0m][Target:'[1;32;40mtest_network_test.o[0m']"
 	$(CXX) -c $(INCPATH) $(DEP_INCPATH) $(CPPFLAGS) $(CXXFLAGS)  -o test_network_test.o network_test.cpp
+
+test_random.o:random.cpp
+	@echo "[[1;32;40mBUILDMAKE:BUILD[0m][Target:'[1;32;40mtest_random.o[0m']"
+	$(CXX) -c $(INCPATH) $(DEP_INCPATH) $(CPPFLAGS) $(CXXFLAGS)  -o test_random.o random.cpp
+
+test_sha1_test.o:sha1_test.cpp
+	@echo "[[1;32;40mBUILDMAKE:BUILD[0m][Target:'[1;32;40mtest_sha1_test.o[0m']"
+	$(CXX) -c $(INCPATH) $(DEP_INCPATH) $(CPPFLAGS) $(CXXFLAGS)  -o test_sha1_test.o sha1_test.cpp
+
+test_sigslot_test.o:sigslot_test.cpp
+	@echo "[[1;32;40mBUILDMAKE:BUILD[0m][Target:'[1;32;40mtest_sigslot_test.o[0m']"
+	$(CXX) -c $(INCPATH) $(DEP_INCPATH) $(CPPFLAGS) $(CXXFLAGS)  -o test_sigslot_test.o sigslot_test.cpp
+
+test_string_encode_test.o:string_encode_test.cpp
+	@echo "[[1;32;40mBUILDMAKE:BUILD[0m][Target:'[1;32;40mtest_string_encode_test.o[0m']"
+	$(CXX) -c $(INCPATH) $(DEP_INCPATH) $(CPPFLAGS) $(CXXFLAGS)  -o test_string_encode_test.o string_encode_test.cpp
 
 test_test.o:test.cpp \
   test.h

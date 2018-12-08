@@ -24,6 +24,8 @@
 #include <set>
 
 #include <pthread.h>
+#include <iostream>
+using namespace std;
 
 // On our copy of sigslot.h, we set single threading as default.
 #define SIGSLOT_DEFAULT_MT_POLICY SingleThreaded
@@ -161,6 +163,7 @@ public:
     template <typename DestT, typename... Args>
     _OpaqueConnection(DestT* pd, void (DestT::*pm)(Args...)) : pdest(pd) {
         typedef void (DestT::*pm_t)(Args...);
+
         static_assert(sizeof(pm_t) <= sizeof(pmethod),
                 "Size of slot function pointer too large.");
 

@@ -65,6 +65,15 @@ bool is_fips180_digest_algorithm(const std::string& alg);
 size_t compute_digest(MessageDigest* digest, const void* input, size_t in_len,
         void* output, size_t out_len);
 
+// Like the previous function, but creates a digest implementation based on
+// the desired digest name |alg|, e.g. DIGEST_SHA_1. Returns 0 if there is no
+// digest with the given name.
+size_t compute_digest(const std::string& alg, 
+        const void* input, 
+        size_t in_len,
+        void* output, 
+        size_t out_len);
+
 // Functions to compute RFC 2104 HMACs.
 
 // Computes the HMAC of |in_len| bytes of |input|, using the |digest| hash

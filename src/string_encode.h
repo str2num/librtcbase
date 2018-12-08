@@ -31,6 +31,8 @@ bool hex_decode(char ch, unsigned char* val);
 // hex_encode shows the hex representation of binary data in ascii.
 size_t hex_encode(char* buffer, size_t buflen,
         const char* source, size_t srclen);
+size_t hex_decode(char * cbuffer, size_t buflen,
+        const char * source, size_t srclen); 
 
 // hex_encode, but separate each byte representation with a delimiter.
 // |delimiter| == 0 means no delimiter

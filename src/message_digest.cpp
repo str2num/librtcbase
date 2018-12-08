@@ -119,6 +119,17 @@ size_t compute_hmac(MessageDigest* digest,
     return digest->finish(output, out_len);
 }
 
+size_t compute_digest(const std::string& alg, 
+        const void* input, 
+        size_t in_len,
+        void* output,
+        size_t out_len)
+{
+    std::unique_ptr<MessageDigest> digest(MessageDigestFactory::create(alg));
+    return (digest) ?
+        compute_digest(digest.get(), input, in_len, output, out_len) : 0;
+}
+
 size_t compute_hmac(const std::string& alg, const void* key, size_t key_len,
         const void* input, size_t in_len,
         void* output, size_t out_len) 
