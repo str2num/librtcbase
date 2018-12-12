@@ -49,6 +49,7 @@ clean:
 	rm -rf test
 	rm -rf ./output/bin/test
 	rm -rf test_array_size_test.o
+	rm -rf test_atomic_test.o
 	rm -rf test_base64_test.o
 	rm -rf test_crc32_test.o
 	rm -rf test_md5_test.o
@@ -78,6 +79,7 @@ love:
 	@echo "make love done"
 
 test:test_array_size_test.o \
+  test_atomic_test.o \
   test_base64_test.o \
   test_crc32_test.o \
   test_md5_test.o \
@@ -92,6 +94,7 @@ test:test_array_size_test.o \
   ../output/lib/*.a
 	@echo "[[1;32;40mBUILDMAKE:BUILD[0m][Target:'[1;32;40mtest[0m']"
 	$(CXX) test_array_size_test.o \
+  test_atomic_test.o \
   test_base64_test.o \
   test_crc32_test.o \
   test_md5_test.o \
@@ -111,6 +114,10 @@ test:test_array_size_test.o \
 test_array_size_test.o:array_size_test.cpp
 	@echo "[[1;32;40mBUILDMAKE:BUILD[0m][Target:'[1;32;40mtest_array_size_test.o[0m']"
 	$(CXX) -c $(INCPATH) $(DEP_INCPATH) $(CPPFLAGS) $(CXXFLAGS)  -o test_array_size_test.o array_size_test.cpp
+
+test_atomic_test.o:atomic_test.cpp
+	@echo "[[1;32;40mBUILDMAKE:BUILD[0m][Target:'[1;32;40mtest_atomic_test.o[0m']"
+	$(CXX) -c $(INCPATH) $(DEP_INCPATH) $(CPPFLAGS) $(CXXFLAGS)  -o test_atomic_test.o atomic_test.cpp
 
 test_base64_test.o:base64_test.cpp
 	@echo "[[1;32;40mBUILDMAKE:BUILD[0m][Target:'[1;32;40mtest_base64_test.o[0m']"

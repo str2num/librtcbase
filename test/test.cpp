@@ -25,8 +25,10 @@ int main() {
     //md5_test();
     //crc32_test();
     //sha1_test();
-    string_encode_test();
+    //string_encode_test();
     //sigslot_test();
+    atomic_test();
+
     return 0;
 }
 
