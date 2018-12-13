@@ -56,6 +56,7 @@ clean:
 	rm -rf test_message_digest_test.o
 	rm -rf test_network_test.o
 	rm -rf test_random.o
+	rm -rf test_ref_count.o
 	rm -rf test_sha1_test.o
 	rm -rf test_sigslot_test.o
 	rm -rf test_string_encode_test.o
@@ -86,6 +87,7 @@ test:test_array_size_test.o \
   test_message_digest_test.o \
   test_network_test.o \
   test_random.o \
+  test_ref_count.o \
   test_sha1_test.o \
   test_sigslot_test.o \
   test_string_encode_test.o \
@@ -101,6 +103,7 @@ test:test_array_size_test.o \
   test_message_digest_test.o \
   test_network_test.o \
   test_random.o \
+  test_ref_count.o \
   test_sha1_test.o \
   test_sigslot_test.o \
   test_string_encode_test.o \
@@ -142,6 +145,10 @@ test_network_test.o:network_test.cpp
 test_random.o:random.cpp
 	@echo "[[1;32;40mBUILDMAKE:BUILD[0m][Target:'[1;32;40mtest_random.o[0m']"
 	$(CXX) -c $(INCPATH) $(DEP_INCPATH) $(CPPFLAGS) $(CXXFLAGS)  -o test_random.o random.cpp
+
+test_ref_count.o:ref_count.cpp
+	@echo "[[1;32;40mBUILDMAKE:BUILD[0m][Target:'[1;32;40mtest_ref_count.o[0m']"
+	$(CXX) -c $(INCPATH) $(DEP_INCPATH) $(CPPFLAGS) $(CXXFLAGS)  -o test_ref_count.o ref_count.cpp
 
 test_sha1_test.o:sha1_test.cpp
 	@echo "[[1;32;40mBUILDMAKE:BUILD[0m][Target:'[1;32;40mtest_sha1_test.o[0m']"

@@ -33,6 +33,7 @@ void crc32_test();
 void string_encode_test();
 void sigslot_test();
 void atomic_test();
+void ref_count_test();
 
 #endif  //__RTCBASE_TEST_H_
 

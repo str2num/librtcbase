@@ -60,8 +60,9 @@ public:
     // has exclusive access to the object.
     virtual bool has_one_ref() const { return _ref_count.has_one_ref(); }
 
-protected:
     virtual ~RefCountedObject() {}
+protected:
+    //virtual ~RefCountedObject() {}
 
     mutable RefCounter _ref_count{0};
 

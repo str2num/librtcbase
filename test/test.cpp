@@ -27,7 +27,8 @@ int main() {
     //sha1_test();
     //string_encode_test();
     //sigslot_test();
-    atomic_test();
+    //atomic_test();
+    ref_count_test();
 
     return 0;
 }
